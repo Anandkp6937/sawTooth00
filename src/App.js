@@ -26,6 +26,7 @@ const App=()=>{
   const [delModel,setdelModal]=useState(false);
   const [id,setId]=useState(0)
   const [title,setTitle]=useState('')
+  const[dialogeType,setDialogetype]=useState("done");
   // console.log("rendered");
 
 useEffect(()=>{
@@ -103,25 +104,60 @@ const onSub=async(e)=>{
   }
   const showDelmodel=(taskcard_id,taskcard_title)=>{
     setdelModal(true)
+    setDialogetype('delete');
     setId(taskcard_id);
     setTitle(taskcard_title);
   }
+  const showDonemodel=(taskcard_title,taskcard_id)=>{
+  console.log("doned");
+  setdelModal(true)
+  setDialogetype('done');
+  setId(taskcard_id);
+  setTitle(taskcard_title);
+  }
+
   const cancelDelmodal=()=>{
     setdelModal(false);
-    console.log("removed delmodal");
+    // console.log("removed delmodal");
   }
-  const deleteItem=(id)=>{
+  const deleteItem=async(id)=>{
     console.log("itemdeleted",id);
+
+
     // write request code with del id
+    let response=await fetch(`http://localhost:7000/tasks/delete/${id}`,{
+      method:"DELETE",
+      headers:{"Content-type":"application/json"}
+
+    });
+    console.log(await response);
+    await fetchdata();
+   setdelModal(false);
   }
+
+  //doned code :current its is same as delete
+  const donedItem=async(id)=>{
+    console.log("itemdeleted",id);
+
+    // write request code with del id
+    let response=await fetch(`http://localhost:7000/tasks/done/${id}`,{
+      method:"DELETE",
+      headers:{"Content-type":"application/json"}
+
+    });
+    console.log(await response);
+    await fetchdata();
+   setdelModal(false);
+  }
+
   return(
     <div>
     <Logo/>
     <Navigation callAddtask={callAddtask}/>
     {notask&&<Notask/>}
-    <Addtasked listdata={listdata} showDelmodel={showDelmodel} />
+    <Addtasked listdata={listdata} showDelmodel={showDelmodel} showDonemodel={showDonemodel} />
     {delModel&&<Deletemodal id={id} title={title} cancelDelmodal={cancelDelmodal}
-    deleteItem={deleteItem}/>}
+    deleteItem={deleteItem} dialogeType={dialogeType} donedItem={donedItem}/>}
     {addtask&&<Modal closeAddtask={closeAddtask}
      handleTilte={ handleTilte} handleDesc={handleDesc}
     handleDate={handleDate}

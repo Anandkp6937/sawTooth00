@@ -1,7 +1,7 @@
 import React from 'react'
 import './taskcard.css'
 
-const Taskcard=({createdon,title,desc,date,listId,showDelmodel})=>{
+const Taskcard=({createdon,title,desc,date,listId,showDelmodel,showDonemodel})=>{
 
   return(
 
@@ -20,7 +20,7 @@ const Taskcard=({createdon,title,desc,date,listId,showDelmodel})=>{
     </div>
     <div className="btns">
     <button className="delete" onClick={showDelmodel}>Delete</button>
-    <button className="done">Done</button>
+    <button className="done" onClick={showDonemodel}>Done</button>
     </div>
 </div>
     </div>

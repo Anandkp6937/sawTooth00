@@ -1,9 +1,11 @@
 .taskcard{
   /* background: #836068; */
   /* padding:10px; */
-  padding-left:20px;
-  padding-right:20px;
+  padding-left:30px;
+  padding-right:30px;
+  padding-bottom:20px;
 margin-top:38px;
+
 
 }
 .taskcard h3{
@@ -35,7 +37,8 @@ margin-top:38px;
 .taskcard-margin{
   padding:20px;
   border-radius:11px;
-border:2px solid var(--primary-color);
+border:2px solid rgb(22,7,53);
+
 }
 .taskcard .btns{
 /* background: #7eddf4; */
