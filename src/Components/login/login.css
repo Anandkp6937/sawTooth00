@@ -1,0 +1,17 @@
+.loginform{
+  padding:20px;
+  margin-left:10px;
+}
+.loginform input[type="text"],input[type="password"]
+{
+height:40px;
+width:80%;
+}
+@media screen and (min-width:600px){
+  .loginform input[type="text"],input[type="password"]
+  {
+    width:30%;
+
+  }
+
+}

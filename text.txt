@@ -1,0 +1,14 @@
+{
+  // <Addtask/>
+  // <Notask/>
+  // <Homepage/>
+  // <Signup/>
+  // <Login/>
+
+}
+{this.state.taskcard==='true'
+?
+<Taskcard datas={this.state} onDone={this.onDone}/>
+:
+<Notask/>
+}

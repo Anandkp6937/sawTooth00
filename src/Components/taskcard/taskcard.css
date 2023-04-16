@@ -1,0 +1,82 @@
+.taskcard{
+  /* background: #836068; */
+  /* padding:10px; */
+  padding-left:20px;
+  padding-right:20px;
+margin-top:38px;
+
+}
+.taskcard h3{
+  opacity:0.8;
+  font-weight:lighter;
+  text-align: right;
+  margin-right:10px;
+}
+.taskcard h1{
+  font-size:25px;
+}
+.maincard{
+  /* background: #ea3be9; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size:20px;
+  margin-top:10px;
+
+}
+.task{
+  margin:10px;
+  padding:2px;
+}
+.task h4{
+  font-weight:normal;
+  display: block;
+}
+.taskcard-margin{
+  padding:20px;
+  border-radius:11px;
+border:2px solid var(--primary-color);
+}
+.taskcard .btns{
+/* background: #7eddf4; */
+display: flex;
+justify-content: flex-end;
+
+}
+
+button{
+padding:10px 10px;
+background: var(--primary-color);
+color:var(--secondary-color);
+border:none;
+margin-left:10px;
+transition:.3s;
+cursor:ponter;
+border-radius:11px;
+}
+.taskcard button:hover{
+  opacity:0.7;
+  transform:scale(1.02);
+}
+.delete{
+  background: #8c123b;
+  color:#fff;
+
+}
+.done{
+  flex:1;
+}
+.notask{
+  margin-top:20px;
+  margin-left:10px;
+  width:90%;
+  opacity:0.7;
+}
+@media screen and (min-width:600px){
+.done{
+  flex:0;
+}
+button{
+  padding:10px 40px;
+}
+}

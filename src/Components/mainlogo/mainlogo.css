@@ -1,0 +1,14 @@
+.mainlogo{
+  /* background: #e19b10; */
+  background:var(--primary-color);
+  color:var(--secondary-color);
+padding:20px;
+}
+.mainlogo img{
+  height:50px;
+  width:50px;
+
+}
+.mainlogo h1{
+text-align: center;
+}
